@@ -12,14 +12,22 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 plugins = {
-	-- init.lua:
 	{
 		'nvim-telescope/telescope.nvim', tag = '0.1.6',
-		-- or                              , branch = '0.1.x',
 		dependencies = { 'nvim-lua/plenary.nvim' }
+	},
+	{		
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v3.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons",
+			"MunifTanjim/nui.nvim",
 
-
+		}
 	}
+
 }
+
 opts = {}
 require("lazy").setup(plugins, opts)
