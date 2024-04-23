@@ -1,1 +1,1 @@
-require("plugins.lazy")
+require("aidenwen.plugins.lazy")
