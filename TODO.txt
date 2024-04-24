@@ -1,0 +1,5 @@
+TODO: 
+- Figure out how to manage all dotfiles
+- Install Nerd Fonts
+- Get a debugger plugin
+- Customize Neotree
