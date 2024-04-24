@@ -31,7 +31,8 @@ plugins = {
         priority = 1000, 
         config = true, 
         opts = ...
-    }
+    },
+    {'nvim-treesitter/nvim-treesitter'}
 }
 
 opts = {}
