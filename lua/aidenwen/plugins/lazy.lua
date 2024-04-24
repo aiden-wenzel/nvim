@@ -32,7 +32,10 @@ plugins = {
         config = true, 
         opts = ...
     },
-    {'nvim-treesitter/nvim-treesitter'}
+    {'nvim-treesitter/nvim-treesitter'},
+    {
+        "lewis6991/gitsigns.nvim"
+    }
 }
 
 opts = {}
