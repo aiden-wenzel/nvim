@@ -11,12 +11,12 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-plugins = {
+local plugins = {
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.6',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    {		
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
         dependencies = {
@@ -26,13 +26,13 @@ plugins = {
 
         }
     },
-    { 
-        "ellisonleao/gruvbox.nvim", 
-        priority = 1000, 
-        config = true, 
+    {
+        "ellisonleao/gruvbox.nvim",
+        priority = 1000,
+        config = true,
         opts = ...
     },
-    {   
+    {
         'nvim-treesitter/nvim-treesitter'
     },
 
@@ -40,9 +40,16 @@ plugins = {
         "lewis6991/gitsigns.nvim"
     },
     {
-        "williamboman/mason.nvim"
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline',
+        'hrsh7th/nvim-cmp'
     }
 }
 
-opts = {}
+local opts = {}
 require("lazy").setup(plugins, opts)
