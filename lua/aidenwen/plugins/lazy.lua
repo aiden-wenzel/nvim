@@ -48,6 +48,9 @@ local plugins = {
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline',
         'hrsh7th/nvim-cmp'
+    },
+    {
+        "m4xshen/autoclose.nvim"
     }
 }
 
