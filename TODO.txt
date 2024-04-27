@@ -1,3 +1,4 @@
 TODO: 
+- get better autoclose plugin
 - Get a debugger plugin
 - Customize Neotree
