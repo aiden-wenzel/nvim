@@ -49,7 +49,7 @@ local plugins = {
         'L3MON4D3/LuaSnip',
     },
     {
-        "m4xshen/autoclose.nvim"
+        "windwp/nvim-autopairs"
     }
 }
 
