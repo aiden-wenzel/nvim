@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "clangd",
-        "pyright",
+        "pylsp",
     },
     handlers = {
         function(server_name)
@@ -42,7 +42,8 @@ cmp.setup({
     sources = cmp.config.sources({
         {name = "nvim_lsp"},
         {name = "nvim_lsp_signature_help"},
-        {name = "luasnip"}
+        {name = "luasnip"},
+        {name = "buffer"}
     })
 })
 

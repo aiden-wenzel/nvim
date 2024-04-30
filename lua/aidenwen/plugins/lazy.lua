@@ -17,20 +17,11 @@ local plugins = {
         'nvim-lua/plenary.nvim', 
     },
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-
-        }
+        "olimorris/onedarkpro.nvim",
+        priority = 1000, -- Ensure it loads first
     },
     {
-        "ellisonleao/gruvbox.nvim",
-        priority = 1000,
-        config = true,
-        opts = ...
+        "morhetz/gruvbox"
     },
     {
         'nvim-treesitter/nvim-treesitter'
@@ -50,6 +41,10 @@ local plugins = {
     },
     {
         "windwp/nvim-autopairs"
+    },
+    {
+        "prichrd/netrw.nvim",
+        "nvim-tree/nvim-web-devicons"
     }
 }
 
