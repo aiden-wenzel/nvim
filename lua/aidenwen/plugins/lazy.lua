@@ -13,8 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     {
-        'nvim-telescope/telescope.nvim', 
-        'nvim-lua/plenary.nvim', 
+        'nvim-telescope/telescope.nvim',
+        'nvim-lua/plenary.nvim',
     },
     {
         "olimorris/onedarkpro.nvim",
