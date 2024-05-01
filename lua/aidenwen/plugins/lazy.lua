@@ -21,7 +21,7 @@ local plugins = {
         priority = 1000, -- Ensure it loads first
     },
     {
-        "morhetz/gruvbox"
+        { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...}
     },
     {
         'nvim-treesitter/nvim-treesitter'
