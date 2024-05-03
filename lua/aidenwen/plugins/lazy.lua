@@ -45,7 +45,10 @@ local plugins = {
     {
         "prichrd/netrw.nvim",
         "nvim-tree/nvim-web-devicons"
-    }
+    },
+    {
+        "mfussenegger/nvim-dap"
+    },
 }
 
 local opts = {}
