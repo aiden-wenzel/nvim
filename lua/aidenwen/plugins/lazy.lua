@@ -47,8 +47,9 @@ local plugins = {
         "nvim-tree/nvim-web-devicons"
     },
     {
-        "mfussenegger/nvim-dap"
+        "mfussenegger/nvim-dap",
     },
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 }
 
 local opts = {}
