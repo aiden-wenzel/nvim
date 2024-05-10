@@ -3,6 +3,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(
 )
 
 require("mason").setup({})
+require("mason-nvim-dap").setup({
+    ensure_installed = { "python", "clangd" }
+})
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
@@ -15,6 +18,15 @@ require("mason-lspconfig").setup({
                 capabilities = capabilities
             })
         end,
+    }
+})
+
+require("lspconfig").clangd.setup({
+    capabilities = capabilities;
+    settings = {
+        clangd = {
+            includePath = {"~/cli_blackjack/include/cli_blackjack"}
+        }
     }
 })
 
@@ -46,4 +58,3 @@ cmp.setup({
         {name = "buffer"}
     })
 })
-
