@@ -30,3 +30,5 @@ dap.configurations.cpp = {
     console = "integratedTerminal",
   },
 }
+
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')

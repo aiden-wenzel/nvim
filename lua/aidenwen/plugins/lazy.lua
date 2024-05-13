@@ -30,6 +30,7 @@ local plugins = {
     "nvim-tree/nvim-web-devicons",
     "mfussenegger/nvim-dap",
     "jay-babu/mason-nvim-dap.nvim",
+    "mfussenegger/nvim-dap-python",
     { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
     {"christoomey/vim-tmux-navigator",
     cmd = {
