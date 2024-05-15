@@ -41,6 +41,7 @@ cmp.setup({
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+        max_width = 50
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -52,9 +53,10 @@ cmp.setup({
         ['<C-y>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
-        {name = "nvim_lsp"},
+        {name = "nvim_lsp", max_item_count = 5},
         {name = "nvim_lsp_signature_help"},
         {name = "luasnip"},
-        {name = "buffer"}
+        {name = "buffer", max_item_count = 5}
     })
 })
+
