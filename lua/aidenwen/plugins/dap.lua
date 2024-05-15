@@ -1,6 +1,10 @@
 return {
 	"rcarriga/nvim-dap-ui",
-	dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
+	dependencies = {
+		"mfussenegger/nvim-dap",
+		"nvim-neotest/nvim-nio",
+		"mfussenegger/nvim-dap-python",
+	},
 	config = function()
 		local dap = require("dap")
 
@@ -34,5 +38,7 @@ return {
 				console = "integratedTerminal",
 			},
 		}
+
+		require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 	end
 }
