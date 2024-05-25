@@ -1,3 +1,3 @@
 require("aidenwen.remap")
-require("aidenwen.plugins")
+require("aidenwen.lazy-init")
 require("aidenwen.style")
