@@ -11,6 +11,7 @@ return {
     config = function()
 	require("neo-tree").setup{
 		popup_boarder_style = "rounded",
+        vim.keymap.set("n", "<leader>nt", vim.cmd.Neotree)
 	}
     end
 }

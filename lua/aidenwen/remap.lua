@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Neotree)
+vim.g.maplocalleader = " "
 
 -- pane navigation
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')

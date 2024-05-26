@@ -25,7 +25,7 @@ return {
 			args = { "-i", "dap" }
 		}
 
-		dap.configurations.cpp = {
+		dap.configurations.cpp = { 
 			{
 				name = "Launch",
 				type = "gdb",
