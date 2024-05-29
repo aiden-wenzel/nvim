@@ -30,6 +30,7 @@ return {
 				"cmake",
 				"autotools_ls",
 				"pyright",
+                "texlab",
 				"lua_ls",
 			},
 			handlers = {
