@@ -38,3 +38,8 @@
 
 ## 1.7 Undotree
 - Open Undotree = `<leader>ut`
+
+# 2. Requirements
+
+## 2.1 VimTex
+- Install `latexmk` by running `sudo apt install latexmk`.
