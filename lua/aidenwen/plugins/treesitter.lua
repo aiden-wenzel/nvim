@@ -6,6 +6,7 @@ return {
             ignore_install = { "latex" },
 			highlight = {
 				enable = true,
+                disable = {"latex"},
 				additional_vim_regex_highlighting = false
 			}
 		})
