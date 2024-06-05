@@ -3,6 +3,7 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {"c", "cpp", "python", "lua"},
+            ignore_install = { "latex" },
 			auto_install = true,
 			highlight = {
                 disable = {"latex"},
