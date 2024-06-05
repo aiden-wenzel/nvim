@@ -42,4 +42,4 @@
 # 2. Requirements
 
 ## 2.1 VimTex
-- Install `latexmk` by running `sudo apt install latexmk`.
+- Install the tex compiler and pdf viewer by running `sudo apt install latexmk zathura`.
