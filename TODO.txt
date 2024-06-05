@@ -1,4 +1,0 @@
-TODO: 
-- Get a debugger plugin
-- Customize Neotree
-- Look into netrw.nvim plugin
