@@ -5,5 +5,6 @@ return {
        vim.cmd("filetype plugin on")
        vim.cmd("set encoding=utf8")
        vim.cmd("let g:vimtex_mappings_enabled=1")
+       vim.g.vimtex_view_method = 'zathura'
     end
 }
