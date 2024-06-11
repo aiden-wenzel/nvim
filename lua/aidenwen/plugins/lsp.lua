@@ -28,7 +28,6 @@ return {
 			ensure_installed = {
 				"clangd",
 				"cmake",
-				"autotools_ls",
 				"pyright",
                 "texlab",
 				"lua_ls",
