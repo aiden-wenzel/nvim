@@ -1,9 +1,18 @@
 return {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000 ,
-    opts = ...,
+    "olimorris/onedarkpro.nvim",
+
     config = function()
-        vim.o.background = "dark" -- or "light" for light mode
-        vim.cmd([[colorscheme gruvbox]])
+        require("onedarkpro").setup({
+            highlights = {
+                Comment = { italic = false},
+                Directory = { bold = false},
+                ErrorMsg = { italic = false, bold = false}
+            },
+            options = {
+                transparency = true
+            }
+        })
+
+        vim.cmd("colorscheme onedark")
     end
 }
