@@ -1,3 +1,5 @@
+-- Purpose: Make open buffers into tabs.
+
 return {
     "romgrk/barbar.nvim",
 

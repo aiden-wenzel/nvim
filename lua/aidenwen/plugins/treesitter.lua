@@ -1,3 +1,5 @@
+-- Purpose: Provide syntax highlighting.
+
 return {
     'nvim-treesitter/nvim-treesitter',
     config = function()

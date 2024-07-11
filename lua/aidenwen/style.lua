@@ -1,3 +1,5 @@
+-- Purpose: Random options for lua
+
 local set = vim.opt
 
 set.nu = true

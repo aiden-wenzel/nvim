@@ -1,3 +1,5 @@
+-- Purpose: Visualize git changes in open buffers
+
 return {
     "lewis6991/gitsigns.nvim",
 

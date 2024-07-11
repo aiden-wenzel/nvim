@@ -1,3 +1,4 @@
+-- Purpose: Turn neovim into an IDE for LaTeX.
 return {
     "lervag/vimtex",
     lazy = false,

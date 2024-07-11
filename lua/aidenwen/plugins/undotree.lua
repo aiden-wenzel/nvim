@@ -1,3 +1,5 @@
+-- Purpose: Provide neovim with a history of saved changes.
+
 return {
     "mbbill/undotree",
 

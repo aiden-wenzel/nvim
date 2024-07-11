@@ -1,3 +1,5 @@
+-- purpose: Provide neovim with a debugger interface.
+
 return {
     "rcarriga/nvim-dap-ui",
     dependencies = {

@@ -1,5 +1,7 @@
+-- Purpose: Provide vim with fuzzy finding capabilities for files, grep, buffers, and help documents.
+
 return {
-    'nvim-telescope/telescope.nvim', 	
+    'nvim-telescope/telescope.nvim',
     tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
 

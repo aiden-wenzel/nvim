@@ -1,3 +1,4 @@
+-- Purpose: Integrate with tmux.
 return {
     "christoomey/vim-tmux-navigator",
     cmd = {

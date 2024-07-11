@@ -1,3 +1,5 @@
+-- Purpose: Install and conifgure language servers. Add in code suggestions.
+
 return {
     "neovim/nvim-lspconfig",
     dependencies = {
