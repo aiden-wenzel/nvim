@@ -58,8 +58,16 @@ return {
                         }
                     }
                 end,
-            }
+            },
         })
+
+        local opts = {
+            noremap = true,
+            silent = true,
+        }
+
+        vim.keymap.set("n", "gd", function() vim.lsp.bug.definition() end, opts)
+
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -101,9 +109,5 @@ return {
                 prefix = "",
             },
         })
-        vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-        vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
     end
 }
-
-
