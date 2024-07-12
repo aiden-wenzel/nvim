@@ -5,7 +5,9 @@ return {
 
     config = function ()
        require("ibl").setup({
-
+           scope = {
+               enabled = true
+           }
        })
     end
 }
