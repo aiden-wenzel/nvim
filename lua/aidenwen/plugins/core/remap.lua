@@ -12,3 +12,6 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- split screen
 vim.keymap.set('n', '<leader>%', ':vsplit<CR>')
 vim.keymap.set('n', '<leader>\"', ':split<CR>')
+
+-- visual block
+vim.keymap.set('n', '<leader>V', '<C-V>')
