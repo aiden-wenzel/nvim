@@ -5,6 +5,7 @@ return {
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
@@ -26,6 +27,11 @@ return {
         )
 
         require("mason").setup()
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "pylint",
+            }
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "clangd",
