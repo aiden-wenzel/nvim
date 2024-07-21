@@ -31,6 +31,9 @@ return {
                 "pyright",
                 "clangd",
                 "cmake",
+                "html",
+                "cssls",
+                "tsserver",
             },
 
             handlers = {
