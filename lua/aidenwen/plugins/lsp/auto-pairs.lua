@@ -2,8 +2,24 @@
 
 return {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true
-    -- use opts = {} for passing setup options
-    -- this is equalent to setup({}) function
+    dependencies = {
+        "windwp/nvim-ts-autotag",
+    },
+
+    config = function()
+        local autopair = require("nvim-autopairs")
+        local autotag = require("nvim-ts-autotag")
+
+        autopair.setup({
+
+        })
+
+        autotag.setup({
+            opts = {
+                enable_close = true,
+                enable_rename = true,
+                enable_close_on_slash = false
+            },
+        })
+    end
 }
