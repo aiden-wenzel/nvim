@@ -1,4 +1,4 @@
--- Purpose: Autoclose brackets.
+-- Purpose: Make brackets autoclose.
 
 return {
     'windwp/nvim-autopairs',

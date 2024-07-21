@@ -1,3 +1,5 @@
+-- Purpose: Install and setup language servers.
+
 return {
     "neovim/nvim-lspconfig",
 

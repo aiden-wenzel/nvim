@@ -1,3 +1,4 @@
+-- Purpose: Add autocomplete engine.
 return {
     "hrsh7th/nvim-cmp",
 

@@ -1,4 +1,4 @@
--- Purpose: Remap default neovim motions and commands
+-- Purpose: Remap default neovim motions and commands.
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

@@ -1,4 +1,4 @@
--- Purpose: Random options for lua
+-- Purpose: Random options for lua.
 
 local set = vim.opt
 
@@ -11,11 +11,6 @@ set.shiftwidth = 4
 set.expandtab = true
 
 set.smartindent = true
-
-set.swapfile = false
-set.backup = false
-set.undodir = os.getenv("HOME") .. "/.vim/undodir"
-set.undofile = true
 
 set.hlsearch = false
 set.incsearch = true

@@ -1,3 +1,5 @@
+-- Purpose: Add status line at the bottom of the neovim UI.
+
 return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },

@@ -1,3 +1,5 @@
+-- Purpose: Give linter suggestions when editting.
+
 return {
     "mfussenegger/nvim-lint",
 
