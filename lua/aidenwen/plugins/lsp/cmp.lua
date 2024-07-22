@@ -16,6 +16,7 @@ return {
     config = function()
         local cmp = require("cmp")
         local cmp_select = {bahavior = cmp.SelectBehavior.Select}
+        local luasnip = require("luasnip")
 
         cmp.setup({
 
@@ -34,8 +35,28 @@ return {
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y'] = cmp.mapping.confirm({select = true}),
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "s"}),
+                ['<CR>'] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        if luasnip.expandable() then
+                            luasnip.expand()
+                        else
+                            cmp.confirm({
+                                select = true,
+                            })
+                        end
+                    else
+                        fallback()
+                    end
+                end),
+                ["<Tab>"] = cmp.mapping(function(fallback)
+                    if cmp.visible() then
+                        cmp.select_next_item()
+                    elseif luasnip.locally_jumpable(1) then
+                        luasnip.jump(1)
+                    else
+                        fallback()
+                    end
+                end, { "i", "s" }),
                 ['<S-Tab'] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"}),
             }),
 
