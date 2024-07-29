@@ -34,7 +34,7 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
 				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-				['<C-y'] = cmp.mapping.confirm({select = true}),
+				['<C-y>'] = cmp.mapping.confirm({select = true}),
 				['<CR>'] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						if luasnip.expandable() then
@@ -57,7 +57,7 @@ return {
 						fallback()
 					end
 				end, { "i", "s" }),
-				['<S-Tab'] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"}),
+				['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"}),
 			}),
 
 			sources = cmp.config.sources({
