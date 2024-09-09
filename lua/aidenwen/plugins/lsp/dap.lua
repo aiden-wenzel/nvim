@@ -54,6 +54,10 @@ return {
 				program = function()
 					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
 				end,
+				args = function()
+					local arguments = vim.fn.input("Arguments: ");
+					return vim.split(arguments, " ");
+				end,
 				cwd = "${workspaceFolder}",
 				stopAtBeginningOfMainSubprogram = true,
 			},
