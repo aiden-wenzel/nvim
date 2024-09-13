@@ -6,10 +6,14 @@ return {
 		"mfussenegger/nvim-dap",
 		"nvim-neotest/nvim-nio",
 		"mfussenegger/nvim-dap-python",
+		"theHamsta/nvim-dap-virtual-text",
 	},
 	config = function()
 		local dap = require("dap")
 		local dapui = require("dapui")
+		local daptext = require("nvim-dap-virtual-text")
+
+		daptext.setup()
 
 		vim.keymap.set('n', '<F5>', function() dap.continue() end)
 		vim.keymap.set('n', '<F10>', function() dap.step_over() end)
@@ -26,30 +30,22 @@ return {
 			require('dap.ui.widgets').hover()
 		end)
 
-		dap.adapters.gdb = {
-			type = "executable",
-			command = "gdb",
-			args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
-		}
+		dap.adapters.codelldb = {
+			type = 'server',
+			port = "${port}",
+			executable = {
+				-- CHANGE THIS to your path!
+				command = '/home/aidenwen/.local/share/nvim/mason/bin/codelldb',
+				args = {"--port", "${port}"},
 
+				-- On windows you may have to uncomment this:
+				-- detached = false,
+			}
+		}
 		dap.configurations.cpp = {
 			{
-				name = "Launch",
-				type = "gdb",
-				request = "launch",
-				program = function()
-					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-				end,
-				cwd = "${workspaceFolder}",
-				stopAtBeginningOfMainSubprogram = true,
-				console = "integratedTerminal",
-			},
-		}
-
-		dap.configurations.c = {
-			{
-				name = "Launch",
-				type = "gdb",
+				name = "Launch file",
+				type = "codelldb",
 				request = "launch",
 				program = function()
 					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
@@ -58,33 +54,12 @@ return {
 					local arguments = vim.fn.input("Arguments: ");
 					return vim.split(arguments, " ");
 				end,
-				cwd = "${workspaceFolder}",
-				stopAtBeginningOfMainSubprogram = true,
-			},
-			{
-				name = "Select and attach to process",
-				type = "gdb",
-				request = "attach",
-				program = function()
-					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-				end,
-				pid = function()
-					local name = vim.fn.input('Executable name (filter): ')
-					return require("dap.utils").pick_process({ filter = name })
-				end,
-				cwd = '${workspaceFolder}'
-			},
-			{
-				name = 'Attach to gdbserver :1234',
-				type = 'gdb',
-				request = 'attach',
-				target = 'localhost:1234',
-				program = function()
-					return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-				end,
-				cwd = '${workspaceFolder}'
+				cwd = '${workspaceFolder}',
+				stopOnEntry = false,
 			},
 		}
+		dap.configurations.c = dap.configurations.cpp
+
 		require('dap-python').setup('.venv/bin/python')
 	end
 }
