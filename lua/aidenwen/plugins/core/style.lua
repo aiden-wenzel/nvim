@@ -11,9 +11,6 @@ set.shiftwidth = 4
 
 set.smartindent = true
 
-set.hlsearch = false
-set.incsearch = true
-
 set.termguicolors = true
 
 set.scrolloff = 8
