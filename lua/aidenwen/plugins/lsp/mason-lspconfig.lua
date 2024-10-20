@@ -34,7 +34,7 @@ return {
 				"cmake",
 				"html",
 				"cssls",
-				"tsserver",
+				"ts_ls",
 			},
 
 			handlers = {
