@@ -7,8 +7,15 @@ return {
 
 	config = function()
 		local telescope = require("telescope.builtin")
+		require("telescope").setup({})
 
-		vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+		local find_files = function()
+			telescope.find_files({
+				find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden' },
+			})
+		end
+
+		vim.keymap.set('n', '<leader>ff', find_files, {})
 		vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
 		vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
 		vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
