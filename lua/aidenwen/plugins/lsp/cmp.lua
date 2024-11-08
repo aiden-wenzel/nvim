@@ -15,7 +15,6 @@ return {
 
 	config = function()
 		local cmp = require("cmp")
-		local cmp_select = {bahavior = cmp.SelectBehavior.Select}
 		local luasnip = require("luasnip")
 
 		cmp.setup({
@@ -32,33 +31,26 @@ return {
 			},
 
 			mapping = cmp.mapping.preset.insert({
-				['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-				['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-				['<C-y>'] = cmp.mapping.confirm({select = true}),
-				['<CR>'] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						if luasnip.expandable() then
-							luasnip.expand()
-						else
-							cmp.confirm({
-								select = true,
-							})
-						end
-					else
-						fallback()
-					end
-				end),
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.locally_jumpable(1) then
-						luasnip.jump(1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "s"}),
-			}),
+				-- Scroll up in the completion list with Tab
+				['<Tab>'] = cmp.mapping.select_next_item({
+					behavior = cmp.SelectBehavior.Insert,
+				}),
+
+				-- Scroll down in the completion list with Shift+Tab
+				['<S-Tab>'] = cmp.mapping.select_prev_item({
+					behavior = cmp.SelectBehavior.Insert,
+				}),
+
+				-- Accept completion item with <CR>
+				['<CR>'] = cmp.mapping.confirm({
+					select = true,  -- Ensure that <CR> always selects the item
+				}),
+
+				-- Optional: Prevent default behavior when pressing <Tab> or <CR>
+				-- so they can be mapped freely
+				['<C-Space>'] = cmp.mapping.complete(),
+				-- You can add more custom mappings as per your needs
+		}),
 
 			sources = cmp.config.sources({
 				{name = 'nvim_lsp'},
