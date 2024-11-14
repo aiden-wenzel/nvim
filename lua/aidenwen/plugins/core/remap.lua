@@ -15,3 +15,6 @@ vim.keymap.set('n', '<leader>\"', ':split<CR>')
 
 -- visual block
 vim.keymap.set('n', '<leader>V', '<C-V>')
+
+-- for escaping function blocks
+vim.api.nvim_set_keymap('i', '<C-j>', '<C-o>j', { noremap = true, silent = true })
