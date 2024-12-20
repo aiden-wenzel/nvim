@@ -8,12 +8,13 @@ local colorscheme = io.read("*a")
 
 vim.cmd("colorscheme " .. colorscheme)
 
-local function setColorScheme(newColorScheme)
-	vim.cmd("colorscheme " .. newColorScheme)
+local function setColorScheme()
+	local scheme = vim.fn.input("Enter new colorscheme: ")
+	vim.cmd("colorscheme " .. scheme)
 
 	local outputFile = io.open(filePath, "w")
 	io.output(outputFile)
-	io.write(newColorScheme)
+	io.write(scheme)
 end
 
-vim.keymap.set("n", "<leader>cs", function() setColorScheme("carbonfox") end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>l", setColorScheme, { noremap = true, silent = true })
