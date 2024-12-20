@@ -2,10 +2,9 @@
 
 return {
 	"EdenEast/nightfox.nvim",
-
+	"catppuccin/nvim",
 
 	config = function()
 		vim.cmd("colorscheme carbonfox")
 	end
 }
-
