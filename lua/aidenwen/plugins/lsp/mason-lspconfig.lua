@@ -59,5 +59,11 @@ return {
 				end
 			}
 		})
+
+		local opts = {noremap = true, silent = true}
+		vim.api.nvim_set_keymap("n", "<leader>gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+		vim.api.nvim_set_keymap("n", "<leader>K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+
 	end
 }
