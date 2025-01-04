@@ -17,4 +17,4 @@ local function setColorScheme()
 	io.write(scheme)
 end
 
-vim.keymap.set("n", "<leader>l", setColorScheme, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>scs", setColorScheme, {silent=true})
