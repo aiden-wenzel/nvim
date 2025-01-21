@@ -15,6 +15,7 @@ return {
 				"css",
 				"javascript",
 				"typescript",
+				"verilog"
 			},
 			ignore_install = { "latex" },
 			highlight = {

@@ -65,5 +65,9 @@ return {
 		vim.api.nvim_set_keymap("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 		vim.api.nvim_set_keymap("n", "<leader>K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 
+		lspconfig.verible.setup{
+			cmd = {'verible-verilog-ls', '--rules_config_search'},
+		}
+
 	end
 }
