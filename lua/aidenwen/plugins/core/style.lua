@@ -16,3 +16,5 @@ set.termguicolors = true
 set.scrolloff = 8
 
 set.updatetime = 50
+
+vim.cmd('autocmd BufEnter * set formatoptions-=cro')
