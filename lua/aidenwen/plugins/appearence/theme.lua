@@ -4,6 +4,7 @@ return {
 	"EdenEast/nightfox.nvim",
 	"catppuccin/nvim",
 	"sainnhe/sonokai",
+	"ellisonleao/gruvbox.nvim",
 
 	config = function()
 		vim.cmd("colorscheme carbonfox")
