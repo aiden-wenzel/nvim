@@ -5,8 +5,5 @@ return {
 	"catppuccin/nvim",
 	"sainnhe/sonokai",
 	"ellisonleao/gruvbox.nvim",
-
-	config = function()
-		vim.cmd("colorscheme carbonfox")
-	end
+	"raddari/last-color.nvim",
 }
