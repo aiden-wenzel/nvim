@@ -5,5 +5,6 @@ return {
 	"catppuccin/nvim",
 	"sainnhe/sonokai",
 	"ellisonleao/gruvbox.nvim",
+	"projekt0n/github-nvim-theme",
 	"raddari/last-color.nvim",
 }
