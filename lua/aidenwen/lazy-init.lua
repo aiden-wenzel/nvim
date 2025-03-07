@@ -20,4 +20,8 @@ require("lazy").setup({
 		{import = "aidenwen.plugins.navigation"},
 		{import = "aidenwen.plugins.source-control"},
 	},
+	change_detection = {
+		enabled = true,
+		notify = false,
+	}
 })
