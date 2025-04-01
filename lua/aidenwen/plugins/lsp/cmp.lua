@@ -53,10 +53,9 @@ return {
 		}),
 
 			sources = cmp.config.sources({
-				-- {name = 'nvim_lsp'},
-				-- {name = 'luasnip'},
-				-- {name = 'nvim_lsp_signature_help'},
-				{name = 'buffer'}
+				{name = 'nvim_lsp', max_item_count = 5},
+				{name = 'nvim_lsp_signature_help', max_item_count = 5},
+				-- {name = 'buffer'}
 			})
 		})
 		vim.diagnostic.config({
