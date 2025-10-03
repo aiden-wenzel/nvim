@@ -14,7 +14,6 @@ return {
 		local mason = require("mason")
 		local mason_lspconfig = require("mason-lspconfig")
 		local mason_tool_installer = require("mason-tool-installer")
-		local lspconfig = require("lspconfig")
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		mason.setup()
@@ -35,17 +34,19 @@ return {
 				"html",
 				"cssls",
 				"ts_ls",
+				"texlab",
+				"ltex",
 			},
 
 			handlers = {
 				function(server_name)
-					lspconfig[server_name].setup({
+					vim.lsp.config[server_name].setup({
 						capabilities = capabilities
 					})
 				end,
 
 				["lua_ls"] = function ()
-					lspconfig.lua_ls.setup({
+					vim.lsp.config.lua_ls.setup({
 						capabilities = capabilities,
 						settings = {
 							Lua = {
@@ -68,9 +69,9 @@ return {
 		vim.keymap.set('n', "<leader>de", "<cmd>lua vim.diagnostic.enable()<cr>")
 		vim.keymap.set('n', "<leader>dd", "<cmd>lua vim.diagnostic.disable()<cr>")
 
-		lspconfig.verible.setup{
-			cmd = {'verible-verilog-ls', '--rules_config_search'},
-		}
+		-- vim.lsp.config.verible.setup{
+		-- 	cmd = {'verible-verilog-ls', '--rules_config_search'},
+		-- }
 
 	end
 }
