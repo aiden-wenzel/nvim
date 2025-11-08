@@ -18,3 +18,9 @@ vim.keymap.set('n', '<leader>V', '<C-V>')
 
 -- for escaping function blocks
 vim.api.nvim_set_keymap('i', '<C-j>', '<C-o>j', { noremap = true, silent = true })
+
+-- resizing windows
+vim.keymap.set('n', '<C-Up>',    ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>',  ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>',  ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
