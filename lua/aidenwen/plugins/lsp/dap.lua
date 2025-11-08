@@ -75,6 +75,10 @@ return {
 			end
 
 			vim.keymap.set("n", "<leader>dc", dapui.close)
+			vim.keymap.set("n", "<leader>do", dapui.open)
+			vim.keymap.set("n", "<leader>de", function()
+				require("dapui").eval()
+			end)
 		end
 	}
 }
