@@ -8,12 +8,14 @@ return {
 			local dap = require("dap")
 			vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Continue" })
 			vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Debug: Step Over" })
-			vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Debug: Step Into" })
-			vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Debug: Step Out" })
+			vim.keymap.set("n", "<leader>dsi", dap.step_into, { desc = "Debug: Step Into" })
+			vim.keymap.set("n", "<leader>dso", dap.step_out, { desc = "Debug: Step Out" })
 			vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Debug: Toggle Breakpoint" })
 			vim.keymap.set("n", "<leader>B", function()
 				dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 			end, { desc = "Debug: Set Conditional Breakpoint" })
+			vim.keymap.set("n", "<leader>dre", dap.restart)
+			vim.keymap.set("n", "<leader>dst", dap.stop)
 
 			dap.adapters.gdb = {
 				type = "executable",
