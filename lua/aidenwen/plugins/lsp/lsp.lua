@@ -8,6 +8,7 @@ return {
 	config = function()
 		require("mason").setup()
 		vim.lsp.enable("pyright")
+		local opts = {}
 
 		vim.lsp.enable("lua_ls")
 		vim.lsp.config("lua_ls", {
@@ -22,5 +23,8 @@ return {
 
 		vim.lsp.enable("clangd")
 
+		-- Key binds
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 	end
 }
