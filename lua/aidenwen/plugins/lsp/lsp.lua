@@ -9,8 +9,15 @@ return {
 		require("mason").setup()
 		vim.lsp.enable("pyright")
 		local opts = {}
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 
 		vim.lsp.enable("lua_ls")
+		vim.lsp.enable("html")
+		vim.lsp.enable("cssls")
+		vim.lsp.enable("clangd")
+
 		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
@@ -20,8 +27,12 @@ return {
 				}
 			}
 		})
-
-		vim.lsp.enable("clangd")
+		vim.lsp.config('html', {
+			capabilities = capabilities,
+		})
+		vim.lsp.config('cssls', {
+			capabilities = capabilities,
+		})
 
 		-- Key binds
 		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
